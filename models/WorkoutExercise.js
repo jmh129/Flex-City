@@ -1,5 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
-  var WorkoutExercise = sequelize.define("WorkoutExercise", {
+  //Table for connecting the workout and exercise in a many to many relationship
+  const WorkoutExercise = sequelize.define("WorkoutExercise", {
+    //create an id with it
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -7,7 +9,10 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
     },
   });
+  //Add the associations to the workouts and exercise tables
   WorkoutExercise.associate = function (models) {
+    //Has a one to many relationship with both workouts and exercise
+    //in order to get a many to many relationship with workouts and exercise
     WorkoutExercise.belongsTo(models.Workout);
     WorkoutExercise.belongsTo(models.Exercise);
   };
