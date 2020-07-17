@@ -2,8 +2,20 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-image: url(../images/background.jpeg);
+  background-size: cover;
+  opacity: 0.9;
 }
 
 main {
   flex: 1 0 auto;
+}
+
+.page-footer {
+  text-align: center;
+  padding-top: 0px;
+}
+
+.fa {
+  margin-right: 2rem;
 }
