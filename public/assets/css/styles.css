@@ -11,6 +11,11 @@ main {
   flex: 1 0 auto;
 }
 
+ul:not(.browser-default) {
+  display: flex;
+  justify-content: center;
+}
+
 .page-footer {
   text-align: center;
   padding-top: 0px;
