@@ -2,17 +2,23 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
-// /api/users/
+// /api/exercise
 
+//get routes for exercises
+router.get("/", (req, res) => {
+  db.Exercise.findAll({}).then((result) => {
+    res.json(result);
+  });
+});
 
-
+//request to create a new exercise
 router.post("/", (req, res) => {
-  db.User.create(req.body)
+  db.Exercise.create(req.body)
     .then((result) => {
       res.json({
         error: false,
         data: result,
-        message: "Successfully created new user",
+        message: "Successfully created new exercise",
       });
     })
     .catch((err) => {
@@ -20,23 +26,17 @@ router.post("/", (req, res) => {
       res.status(500).json({
         error: true,
         data: null,
-        message: "Unable to create new user.",
+        message: "Unable to create new exercise.",
       });
     });
 });
-
-// /api/users/:id
-router.put("/:id", (req, res) => {
-  res.json({
-    message: "Put route",
-  });
-});
-
-// /api/users/:id
 router.delete("/:id", (req, res) => {
-  res.json({
-    message: "Delete route",
+  db.Exercise.destroy({
+    where: {
+      id: req.params.id,
+    },
+  }).then((result) => {
+    res.json(result);
   });
 });
-
 module.exports = router;
