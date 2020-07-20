@@ -2,8 +2,16 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: white;
+  /*background-image: url(../images/background.jpeg);
+  background-size: cover;
+  */
+  background-color: black;
   opacity: 0.9;
+}
+
+.brand-logo{
+    margin-top: 5px;
+    height: 19vh;
 }
 
 main {
@@ -24,6 +32,13 @@ ul:not(.browser-default) {
   margin-right: 2rem;
 }
 
+nav{
+    height: 21vh;
+    background-color: 31158d;
+    display: flex;
+    min-height: 10px;
+    flex-direction: column;
+    opacity: 0.9;
 h1 {
   margin-top: 10rem;
   text-align: center;
