@@ -24,6 +24,10 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
+    time:{
+      type:DataTypes.INTEGER,
+      allowNull:false
+    }
   });
   //Associate the exercise to workouts in a one to many relationship
   Exercise.associate = function (models) {

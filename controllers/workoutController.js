@@ -20,6 +20,22 @@ router.get("/workouts/:id", function (req, res) {
     res.render("index", result);
   });
 });
+//get only saved routes
+router.get("/workouts/saved", function (req, res) {
+  if(req.body === null){
+    res.render("404")
+  }
+  db.Workout.findAll({
+    where: {
+      id: {
+        [Op.or]:req.body.array
+      }
+    },
+  }).then(function (result) {
+    res.render("index", result);
+  });
+});
+
 
 //  Route that creates new workout
 router.post("/api/workouts/", function (req, res) {
@@ -47,7 +63,7 @@ router.delete("/api/workouts/:id", function (req, res) {
       id: req.params.id,
     },
   }).then(function (result) {
-    res.json(result);
+    res.render(result);
   });
 });
 
