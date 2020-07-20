@@ -21,7 +21,7 @@ module.exports = function (sequelize, DataTypes) {
   //Workout relationships
   Workout.associate = function (models) {
     //Workouts and Exercises are a one to many relationship
-    Workout.hasMany(models.WorkoutExercise);
+    Workout.hasMany(models.Exercise);
 
     //Users and workouts are a many to many relationship so need a middle table UserWorkout
     Workout.belongsToMany(models.User, { through: models.UserWorkout });
