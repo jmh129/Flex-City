@@ -15,6 +15,7 @@ const ViewsController = require("./controllers/viewsController.js");
 const APIController = require("./controllers/apiController");
 const UsersController = require("./controllers/usersController");
 const ExerciseController = require("./controllers/exerciseController");
+const WorkoutController = require("./controllers/workoutController");
 
 /**
  * MIDDLEWARE
@@ -38,6 +39,7 @@ app.use(ViewsController);
 app.use(APIController);
 app.use("/api/users", UsersController);
 app.use(ExerciseController);
+app.use(WorkoutController);
 
 /**
  * DB Connection
