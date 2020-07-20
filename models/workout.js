@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     //Creates a type column of what kind of exercise it is that must be 1 length
     type: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1],

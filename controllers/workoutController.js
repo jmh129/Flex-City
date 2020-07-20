@@ -48,7 +48,7 @@ router.put("/api/workouts/:id", function (req, res) {
 
 // Route that deletes workouts by their id's
 router.delete("/api/workouts/:id", function(req, res) {
-    db.Workout.delete({
+    db.Workout.destroy({
         where: {
           id: req.params.id
         }
