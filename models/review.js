@@ -1,3 +1,6 @@
+//might delete and not use reviews
+
+
 module.exports = function (sequelize, DataTypes) {
   //create a table for reviews
   const Review = sequelize.define("Review", {

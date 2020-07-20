@@ -22,7 +22,7 @@ router.get("/workouts/:id", function(req, res) {
         res.render("index", result);
       });
   });
-  
+
 //  Route that creates new workout
 router.post("/api/workouts/", function (req, res) {
     db.Workout.create(req.body)
@@ -58,7 +58,5 @@ router.delete("/api/workouts/:id", function(req, res) {
         });
   });
 
-
 module.exports = router;
-
 
