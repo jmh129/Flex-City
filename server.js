@@ -37,7 +37,7 @@ app.use(express.static("public"));
 app.use(ViewsController);
 app.use(APIController);
 app.use("/api/users", UsersController);
-app.use("/api/exercise", ExerciseController);
+app.use(ExerciseController);
 
 /**
  * DB Connection

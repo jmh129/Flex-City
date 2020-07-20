@@ -3,20 +3,21 @@ const router = express.Router();
 const db = require("../models");
 
 // /api/exercise/
+
 //get routes for all exercises (might need to show o)
-router.get("/:id", (req, res) => {
+router.get("/exercise/:id", (req, res) => {
   //return all exercises
   db.Exercise.findOne({
     where:{
       id:req.params.id
     }
   }).then((result) => {
-    res.json(result);
+    res.render("exercise",result);
   });
 });
 
 //request to create a new exercise
-router.post("/", (req, res) => {
+router.post("/api/exercise/", (req, res) => {
   db.Exercise.create(req.body)
     //on sucess send a response of the data and a message that it was created
     .then((result) => {
@@ -37,7 +38,7 @@ router.post("/", (req, res) => {
     });
 });
 //request for updating an exercise
-router.put("/:id", (req, res) => {
+router.put("/api/exercise/:id", (req, res) => {
   //update the name, reps, sets, and weights part of the exercise
   db.Exercise.update(req.body,
     {
@@ -66,7 +67,7 @@ router.put("/:id", (req, res) => {
 });
 
 //request for deleting an exercise
-router.delete("/:id", (req, res) => {
+router.delete("/api/exercise/:id", (req, res) => {
   //call to destroy the exercise
   db.Exercise.destroy({
     //location of which exercise to destroy
