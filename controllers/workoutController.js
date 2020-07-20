@@ -27,7 +27,7 @@ router.get("/workouts/:id", function(req, res) {
 router.post("/api/workouts/", function (req, res) {
     db.Workout.create(req.body)
         .then(function(result) {
-          res.render("index", result);
+          res.json(result);
         });
 });
 
