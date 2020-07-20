@@ -39,4 +39,7 @@ nav{
     min-height: 10px;
     flex-direction: column;
     opacity: 0.9;
+h1 {
+  margin-top: 10rem;
+  text-align: center;
 }
