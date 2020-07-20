@@ -4,8 +4,8 @@ const db = require("../models");
 
 // Route to display the index page
 router.get("/workouts", function (req, res) {
-  db.Workout.findAll({}).then((data) => {
-    res.render("index", data);
+  db.Workout.findAll({}).then(function (result) {
+    res.render("index", result);
   });
 });
 
@@ -15,31 +15,28 @@ router.get("/workouts/:id", function (req, res) {
     where: {
       id: req.params.id,
     },
-    include: db.Exercise,
-  }).then(function (dbWorkout) {
-    res.render("index");
+    include: [db.Excercise],
+  }).then(function (result) {
+    res.render("index", result);
   });
 });
 
 //  Route that creates new workout
 router.post("/api/workouts/", function (req, res) {
-  db.Workout.create(req.body).then((result) => {
-    // This needs to update depending on the handlebars page(maybe workouts handlebars page), not index.
-    res.json("index", result);
+  db.Workout.create(req.body).then(function (result) {
+    res.json(result);
   });
 });
 
 // Route that takes you to the workout user selected by id
 router.put("/api/workouts/:id", function (req, res) {
-  db.Workout.update({
-    type: req.body.type,
-    id: req.params.id,
-  }).then((result) => {
-    if (result.changedRows == 0) {
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
+  db.Workout.update(req.body, {
+    where: {
+      type: req.body.type,
+      id: req.body.id,
+    },
+  }).then(function (result) {
+    res.json(result);
   });
 });
 
@@ -49,14 +46,9 @@ router.delete("/api/workouts/:id", function (req, res) {
     where: {
       id: req.params.id,
     },
-  }).then((result) => {
-    if (result.affectedRows == 0) {
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
+  }).then(function (result) {
+    res.json(result);
   });
 });
 
 module.exports = router;
-
