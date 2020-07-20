@@ -1,35 +1,37 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../models/workout.js");
+const db = require("../models");
 
 // Route to display the index page
-router.get("/", function (req, res) {
-  Workout.all(function (data) {
-    let hbsObject = {
-
-    };
-    res.render("index", hbsObject);
+router.get("/api/workouts", function(req, res) {
+    db.Workout.findAll(function(data) {
+      let hbsObject = {
+        Workout: data
+      };
+      console.log(hbsObject);
+      res.render("index", hbsObject);
+    });
   });
-});
-// THIS WILL BE USED IN GET ROUTE TO ORDER WORKOUTS BY THEIR RANKING
-// User.findById(uID, { 
-//     include: [
-//         model: sequelize.models.userProfile
-//         as: userProfile,
-//         include: [{
-//            model: sequelize.models.userProfileImages,
-//            as: 'profileImages',
-//         }],
-//         order: [['profileImages','id', 'desc']]
-//     ]
-// });
 
-//  Route that displays all the workouts on the page
-router.post("/api/workouts", function (req, res) {
-  Workout.create(["name", "type"], [req.body.name, req.body.type], function (
+// Route that shows one workout
+router.get("/api/workouts/:id", function(req, res) {
+    db.Workout.findOne({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function(dbWorkout) {
+        res.json(dbWorkout);
+      });
+  });
+  
+//  Route that creates new workout
+router.post("/api/workouts/", function (req, res) {
+  db.Workout.create(["name", "type"], [req.body.name, req.body.type], function (
     result
   ) {
-    res.json({ id: result.insertId });
+    // This needs to update depending on the handlebars page(maybe workouts handlebars page), not index.
+    res.render("index", result);
   });
 });
 
@@ -51,5 +53,21 @@ router.put("/api/workouts/:id", function (req, res) {
     }
   );
 });
+
+// Route that deletes workouts by their id's
+router.delete("/api/workouts/:id", function(req, res) {
+    let condition = "id = " + req.params.id;
+  
+    db.Workout.delete(condition, function(result) {
+      if (result.affectedRows == 0) {
+        return res.status(404).end();
+      } else {
+        res.status(200).end();
+      }
+    });
+  });
+
+
+module.exports = router;
 
 // I really don't know if any of this is right
