@@ -2,13 +2,19 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-image: url(../images/background.jpeg);
-  background-size: cover;
+  /* background-image: url(../images/background.jpeg);
+  background-size: cover; */
+  background-color: black;
   opacity: 0.9;
 }
 
 main {
   flex: 1 0 auto;
+}
+
+ul:not(.browser-default) {
+  display: flex;
+  justify-content: center;
 }
 
 .page-footer {
