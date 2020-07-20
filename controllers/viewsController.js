@@ -7,20 +7,12 @@ router.get("/", (req, res) => {
 });
 
 //these are just placeholders and guesses until front end is done
-router.get("/workout",(req,res) =>{
-  res.render("workout");
-})
-router.get("/workout_list",(req,res) =>{
-  res.render("workoutform");
-})
 router.get("/workout/create",(req,res) =>{
-  res.render("oneWorkout");
-})
-router.get("/exercise",(req,res) =>{
-  res.render("exercise");
+  res.render("workoutform");
 })
 router.get("/exercise/create",(req,res) =>{
   res.render("exerciseform");
 })
+//might need to add more
 
 module.exports = router;
