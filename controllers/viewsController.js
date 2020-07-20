@@ -13,6 +13,10 @@ router.get("/workout/create",(req,res) =>{
 router.get("/exercise/create",(req,res) =>{
   res.render("exerciseform");
 })
+//render 404 page needs
+router.get("*",(req,res)=>{
+  res.render("404")
+})
 //might need to add more
 
 module.exports = router;

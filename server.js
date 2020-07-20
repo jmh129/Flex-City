@@ -35,11 +35,11 @@ app.set("view engine", "handlebars");
 app.use(express.static("public"));
 
 // Routes
-app.use(ViewsController);
 app.use(APIController);
 app.use("/api/users", UsersController);
 app.use(ExerciseController);
 app.use(WorkoutController);
+app.use(ViewsController);
 
 /**
  * DB Connection

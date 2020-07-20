@@ -17,7 +17,7 @@ router.get("/workouts/:id", function (req, res) {
     },
     include: db.Exercise,
   }).then(function (dbWorkout) {
-    res.render(dbWorkout);
+    res.render("index");
   });
 });
 
@@ -25,7 +25,7 @@ router.get("/workouts/:id", function (req, res) {
 router.post("/api/workouts/", function (req, res) {
   db.Workout.create(req.body).then((result) => {
     // This needs to update depending on the handlebars page(maybe workouts handlebars page), not index.
-    res.render("index", result);
+    res.json("index", result);
   });
 });
 
