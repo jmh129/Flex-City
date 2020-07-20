@@ -2,12 +2,15 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
-// /api/exercise
-
+// /api/exercise/
 //get routes for all exercises (might need to show o)
-router.get("/", (req, res) => {
+router.get("/:id", (req, res) => {
   //return all exercises
-  db.Exercise.findAll({}).then((result) => {
+  db.Exercise.findOne({
+    where:{
+      id:req.params.id
+    }
+  }).then((result) => {
     res.json(result);
   });
 });

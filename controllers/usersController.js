@@ -2,10 +2,10 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
+//Currently not in use due to local storage strategy
+//Might come back when user authentification
+
 // /api/users/
-
-
-
 router.post("/", (req, res) => {
   db.User.create(req.body)
     .then((result) => {
