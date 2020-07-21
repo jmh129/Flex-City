@@ -1,14 +1,13 @@
 <div class="container">
-
-
   <div class="listSelection">
     <ul class="ul1">
       {{#each singleexercisedata}}
       <button class="btn indigo center workoutView" id="{{id}}">
         {{>singleExercise/singleExercise-block}}
       </button>
-      <button class="btn red center workoutViewDelete" id="{{id}}">
-        Delete
+      <button id="{{id}}"
+        class="btn-floating red center workoutViewDelete">
+        <i class="material-icons">delete</i>
       </button>
       <h2 class="restTimer"></h2>
       <br><br>
