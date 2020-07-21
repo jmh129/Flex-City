@@ -1,6 +1,5 @@
-const { json } = require("sequelize/types");
-
 $(document).ready(function () {
+  
   let savedWorkout = [];
   //get local storage
   if (localStorage.getItem("saved") === null) {

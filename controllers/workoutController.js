@@ -20,6 +20,7 @@ router.get("/workouts/:id", function (req, res) {
     res.render("index", result);
   });
 });
+
 //get only saved routes
 router.get("/workouts/saved", function (req, res) {
   if(req.body === null){

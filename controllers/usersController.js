@@ -2,8 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
-//Currently not in use due to local storage strategy
-//Might come back when user authentification
+//NOT IN USE FOR FINAL PROJECT
 
 // /api/users/
 router.post("/", (req, res) => {

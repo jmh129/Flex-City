@@ -9,6 +9,7 @@ const exphbs = require("express-handlebars");
  * DEFINE VARIABLES
  */
 const PORT = process.env.PORT || 8080;
+
 const app = express();
 const db = require("./models");
 const ViewsController = require("./controllers/viewsController.js");

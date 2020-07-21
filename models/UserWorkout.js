@@ -1,3 +1,4 @@
+//NOT IN USE FOR FINAL SUBMITION
 module.exports = function (sequelize, DataTypes) {
   //Table for connecting the user and workout in a many to many relationship
   const UserWorkout = sequelize.define("UserWorkout", {

@@ -13,6 +13,10 @@ router.get("/workout/create",(req,res) =>{
 router.get("/exercise/create",(req,res) =>{
   res.render("exerciseform");
 })
+router.get("/workout/find",(req,res) =>{
+  res.render("find");
+})
+
 //render 404 page needs
 router.get("*",(req,res)=>{
   res.render("404")
