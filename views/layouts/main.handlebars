@@ -110,9 +110,12 @@
     $(document).ready(function () {
       const buttonClicked = $(this);
       $(".workoutView").on("click", function (event) {
-        console.log(this.id);
         $(this).removeClass("indigo");
         $(this).addClass("green");
+      });
+      $(".workoutViewDelete").on("click", function (event) {
+        $(this).removeClass("red");
+        $(this).addClass("red accent-4");
       });
     });
   </script>
