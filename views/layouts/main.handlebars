@@ -183,6 +183,20 @@
       })
     })
   </script>
+  <script>
+    $(document).ready(function () {
+      $(".deletebtn").on("click", function(event){
+        let id = $(this).attr("data-id")
+
+        $.ajax("/api/workouts/" + id, {
+          type:"DELETE"
+        }).then(function(result) {
+            console.log(result)
+            location.reload();
+          })
+      })
+    })
+  </script>
 </body>
 
 </html>

@@ -8,11 +8,11 @@ const db = require("../models");
 router.get("/exercise/:id", (req, res) => {
   //return all exercises
   db.Exercise.findOne({
-    where:{
-      id:req.params.id
-    }
+    where: {
+      id: req.params.id,
+    },
   }).then((result) => {
-    res.render("exercise",result);
+    res.render("exercise", result);
   });
 });
 
@@ -40,7 +40,8 @@ router.post("/api/exercise/", (req, res) => {
 //request for updating an exercise
 router.put("/api/exercise/:id", (req, res) => {
   //update the name, reps, sets, and weights part of the exercise
-  db.Exercise.update(req.body,
+  db.Exercise.update(
+    req.body,
     {
       //location of the exercise that is being updated
       where: {
@@ -75,22 +76,22 @@ router.delete("/api/exercise/:id", (req, res) => {
       id: req.params.id,
     },
     //on sucess send a response of the data and a message that it was deleted
-  }).then((result) => {
-    res
-      .json({
+  })
+    .then((result) => {
+      res.json({
         error: true,
         data: result,
         message: "Successfully deleted exercise",
-      })
-      //on failure send a status code with message of unable to be deleted
-      .catch((err) => {
-        res.status(500),
-          json({
-            error: true,
-            data: null,
-            message: "Unable to delete exercise",
-          });
       });
-  });
+      //on failure send a status code with message of unable to be deleted
+    })
+    .catch((err) => {
+      res.status(500),
+        json({
+          error: true,
+          data: null,
+          message: "Unable to delete exercise",
+        });
+    });
 });
 module.exports = router;
