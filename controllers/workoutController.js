@@ -27,6 +27,21 @@ router.get("/workouts/:id", function (req, res) {
   });
 });
 
+router.get("/workouts/edit/:id", function (req, res) {
+  db.Workout.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [db.Exercise]
+  }).then(function (result) {
+    console.log(result.dataValues.Exercises[0].dataValues.text)
+      var singleexercisedata = {
+        singleexercisedata: result.dataValues
+      }
+    res.render("editwork",singleexercisedata);
+  });
+});
+
 //get only saved routes
 router.get("/workouts/saved", function (req, res) {
   if(req.body === null){
@@ -62,6 +77,7 @@ router.put("/api/workouts/:id", function (req, res) {
     res.json(result);
   });
 });
+
 
 // Route that deletes workouts by their id's
 router.delete("/api/workouts/:id", function (req, res) {
