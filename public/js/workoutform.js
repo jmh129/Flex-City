@@ -30,6 +30,19 @@ $(document).ready(function () {
   });
 
   $("#editbtn").on("click", function () {
-    
+
   })
+
+  // $(".deleteWorkout").on("click", function(event) {
+  //   var id = $(this).data("id");
+
+  //   $.ajax("/api/workouts/" + id, {
+  //     type: "DELETE"
+  //   }).then(
+  //     function() {
+  //       console.log("deleted workout", id);
+  //       location.reload();
+  //     }
+  //   );
+  // });
 });
