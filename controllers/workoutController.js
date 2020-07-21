@@ -18,9 +18,12 @@ router.get("/workouts/:id", function (req, res) {
     where: {
       id: req.params.id,
     },
-    include: [db.Excercise],
+    include: [db.Exercise]
   }).then(function (result) {
-    res.render("viewworkout", result);
+    const singleexercisedata = {
+      singleexercisedata:result
+    }
+    res.render("viewWorkout",singleexercisedata);
   });
 });
 

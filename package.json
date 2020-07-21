@@ -5,13 +5,15 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.1.0",
+    "express-handlebars": "^3.0.0",
     "materialize-social": "^1.0.3",
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
     "sequelize": "^6.3.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "handlebars": "^4.5.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
