@@ -6,13 +6,18 @@
         <div class="col s12 m6">
           <div class="card transparent">
             <div class="card-content indigo-text">
-              <span class="card-title"> {{name}} </span>
-              <button type="submit" data-id="{{id}}"
-                class="btn-floating halfway-fab waves-effect waves-light indigo"><a
-                  href="/workouts/{{id}}">
-                  <i class="material-icons">search</i></a>
-              </button>
+              <span class="card-title"><a href="/workouts/{{id}}"> {{name}} </a></span>
               <p>{{type}}</p>
+              <button type="submit" data-id="{{id}}"
+                class="btn-floating waves-effect waves-light indigo right"><a
+                href="/workouts/edit/{{id}}">
+                <i class="material-icons">edit</i></a>
+              </button>
+              <button type="submit" data-id="{{id}}"
+                class="btn-floating waves-effect waves-light indigo right"><a
+                href="/workouts/delete/{{id}}">
+                <i class="material-icons">delete</i></a>
+              </button>
             </div>
           </div>
         </div>
