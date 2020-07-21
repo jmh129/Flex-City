@@ -6,17 +6,17 @@
         <div class="col s12 l5 offset-l2">
             <form action="">
                 <div class="input-field">
-                    <textarea id="type" class="materialize-textarea">{{singleexercisedata.name}}</textarea>
+                    <textarea id="name-edit" data-id ="{{singleexercisedata.id}}" class="materialize-textarea">{{singleexercisedata.name}}</textarea>
                     <label for="email">Name of Workout</label>
                 </div>
                 <div class="input-field">
-                    <textarea id="type" class="materialize-textarea">{{singleexercisedata.type}}</textarea>
+                    <textarea id="type-edit" class="materialize-textarea">{{singleexercisedata.type}}</textarea>
                     <label for="type">Type of Workout</label>
                 </div>
 
                 {{#each singleexercisedata.Exercises}}
                 <div class="input-field">
-                    <textarea id="message{{dataValues.id}}" class="materialize-textarea">{{dataValues.text}}</textarea>
+                    <textarea id="loop{{@index}}" data-id = "{{dataValues.id}}"class="materialize-textarea">{{dataValues.text}}</textarea>
                     <label for="message1">Exercise</label>
                 </div>
                 {{/each}}
@@ -25,7 +25,7 @@
                     <textarea id="comments" class="materialize-textarea"></textarea>
                     <label for="comments">Comments</label>
                 </div>
-                <a class="waves-effect waves-light btn indigo" id="submitbtn">Submit</a>
+                <a class="waves-effect waves-light btn indigo" id="submitbtn-edit">Submit</a>
             </form>
         </div>
     </div>

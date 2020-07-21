@@ -34,7 +34,6 @@ router.get("/workouts/edit/:id", function (req, res) {
     },
     include: [db.Exercise]
   }).then(function (result) {
-    console.log(result.dataValues.Exercises[0].dataValues.text)
       var singleexercisedata = {
         singleexercisedata: result.dataValues
       }
@@ -68,10 +67,12 @@ router.post("/api/workouts/", function (req, res) {
 
 // Route that takes you to the workout user selected by id
 router.put("/api/workouts/:id", function (req, res) {
-  db.Workout.update(req.body, {
+  db.Workout.update({
+    name:req.body.name,
+    type:req.body.type,
+  }, {
     where: {
-      type: req.body.type,
-      id: req.body.id,
+      id: req.params.id,
     },
   }).then(function (result) {
     res.json(result);
