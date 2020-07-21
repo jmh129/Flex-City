@@ -44,7 +44,7 @@ router.get("/exercise/create",(req,res) =>{
   res.render("exerciseform");
 });
 router.get("/workout/viewWorkout",(req,res) =>{
-  res.render("viewWorkout");
+  res.render("viewWorkout",singleexercise);
 });
 router.get("/workout/myworkouts",(req,res) =>{
   res.render("myworkouts");
