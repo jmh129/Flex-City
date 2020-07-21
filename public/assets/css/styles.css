@@ -55,3 +55,8 @@ p {
 .input-field label {
   color: indigo;
 }
+
+.listSelection{
+    display: grid;
+    justify-content: center;
+}

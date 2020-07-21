@@ -20,9 +20,9 @@ router.get("/workouts/:id", function (req, res) {
     },
     include: [db.Exercise]
   }).then(function (result) {
-    const singleexercisedata = {
-      singleexercisedata:result
-    }
+      var singleexercisedata = {
+        singleexercisedata: result.Exercises
+      }
     res.render("viewWorkout",singleexercisedata);
   });
 });
