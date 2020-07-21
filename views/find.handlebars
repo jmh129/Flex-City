@@ -7,10 +7,11 @@
           <div class="card transparent">
             <div class="card-content indigo-text">
               <span class="card-title"> {{name}} </span>
-              <a
-                class="btn-floating halfway-fab waves-effect waves-light indigo"><i
-                  class="material-icons">search</i></a>
-             
+              <button type="submit" data-id="{{id}}"
+                class="btn-floating halfway-fab waves-effect waves-light indigo"><a
+                  href="/workouts/{{id}}">
+                  <i class="material-icons">search</i></a>
+              </button>
               <p>{{type}}</p>
             </div>
           </div>

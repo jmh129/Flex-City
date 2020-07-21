@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="https://i.imgur.com/9UsSsMn.png" type="image/x-icon"/>
+  <link rel="icon" href="https://i.imgur.com/9UsSsMn.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -15,67 +15,55 @@
 </head>
 
 <body>
-    {{!-- NAV BAR  --}}
-    <header>
-        <nav class="nav-wrapper deep-purple darken-4">
-            <div class="container">
-                <a href="#" class="brand-logo"><img
-                        src="/assets/img/FlexCity.png" width="110"
-                        height="auto"></a>
-                <a href="#" class="sidenav-trigger"
-                    data-target="mobile-links">
-                    <i class="material-icons">menu</i>
-                </a>
-                <ul class="right hide-on-med-and-down">
-                    <li class="tab"><a
-                            class="waves-effect waves-light"
-                            href="/">Home</a></li>
-                    <li class="tab"><a
-                            class="waves-effect waves-light"
-                            href="/workouts/find">Find</a></li>
-                    <li class="tab"><a
-                            class="waves-effect waves-light"
-                            href="/workout/create">Create</a></li>
-                    <li class="tab"><a
-                            class="waves-effect waves-light"
-                            href="/workout/myworkouts">My Workouts</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <ul class="sidenav" id="mobile-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/workouts/find">Find</a></li>
-            <li><a href="/workout/create">Create</a></li>
-            <li><a href="/workout/myworkouts">My Workouts</a></li>
+  {{!-- NAV BAR  --}}
+  <header>
+    <nav class="nav-wrapper deep-purple darken-4">
+      <div class="container">
+        <a href="#" class="brand-logo"><img src="/assets/img/FlexCity.png" width="110" height="auto"></a>
+        <a href="#" class="sidenav-trigger" data-target="mobile-links">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li class="tab"><a class="waves-effect waves-light" href="/">Home</a></li>
+          <li class="tab"><a class="waves-effect waves-light" href="/workouts/find">Find</a></li>
+          <li class="tab"><a class="waves-effect waves-light" href="/workout/create">Create</a></li>
+          <li class="tab"><a class="waves-effect waves-light" href="/workout/myworkouts">My Workouts</a>
+          </li>
         </ul>
-    </header>
-    <main>
+      </div>
+    </nav>
+    <ul class="sidenav" id="mobile-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/workout/find">Find</a></li>
+      <li><a href="/workout/create">Create</a></li>
+      <li><a href="/workout/myworkouts">My Workouts</a></li>
+    </ul>
+  </header>
+  <main>
 
-        {{{body}}}
+    {{{body}}}
 
-    
-    </main>
-    <footer class="page-footer deep-purple darken-4">
+
+  </main>
+  <footer class="page-footer deep-purple darken-4">
+    <div class="container">
+      <div class="footer-copyright">
         <div class="container">
-            <div class="footer-copyright">
-                <div class="container">
-                    <a href="*">
-                        <i class="fa fa-facebook fa-2x"></i></a>
-                    <a href="*">
-                        <i class="fa fa-instagram fa-2x"></i></a>
-                    <a href="*">
-                        <i class="fa fa-twitter fa-2x"></i></a>
-                </div>
-            </div>
-    </footer>
+          <a href="*">
+            <i class="fa fa-facebook fa-2x"></i></a>
+          <a href="*">
+            <i class="fa fa-instagram fa-2x"></i></a>
+          <a href="*">
+            <i class="fa fa-twitter fa-2x"></i></a>
+        </div>
+      </div>
+  </footer>
 
 
-    {{!-- JQEURY FOR MATERIALIZE  --}}
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
-  
+  {{!-- JQEURY FOR MATERIALIZE  --}}
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -87,46 +75,47 @@
       $('.parallax').parallax();
     })
   </script>
-  <script atl = "workoutform script">
+  <script atl="workoutform script">
     $(document).ready(function () {
-  $("#submitbtn").on("click", function () {
-    if ($("#name").val() === "" || $("#type").val() === "") {
-      alert("Enter a name and type");
-    } else {
-      $.ajax("/api/workouts", {
-        type: "POST",
-        data: {
-          name: $("#name").val(),
-          type: $("#type").val(),
-        },
-      }).then(function (results) {
-        for (let i = 1; i < 6; i++) {
-          if ($("#message" + i).val() !== "") {
-            $.ajax("/api/exercise/", {
-              type: "POST",
-              data: {
-                text: $("#message" + i).val(),
-                WorkoutId: results.id,
-              },
-            }).then(function () {
-              location.reload();
-            });
-          }
+      $("#submitbtn").on("click", function () {
+        if ($("#name").val() === "" || $("#type").val() === "") {
+          alert("Enter a name and type");
+        } else {
+          $.ajax("/api/workouts", {
+            type: "POST",
+            data: {
+              name: $("#name").val(),
+              type: $("#type").val(),
+            },
+          }).then(function (results) {
+            for (let i = 1; i < 6; i++) {
+              if ($("#message" + i).val() !== "") {
+                $.ajax("/api/exercise/", {
+                  type: "POST",
+                  data: {
+                    text: $("#message" + i).val(),
+                    WorkoutId: results.id,
+                  },
+                }).then(function () {
+                  location.reload();
+                });
+              }
+            }
+          });
         }
       });
-    }
-  });
-});
+    });
   </script>
   <script>
-      $(document).ready(function(){
-          const buttonClicked = $(this);
-          $(".workoutView").on("click",function(event){
-          console.log(this.id);
-          $(this).removeClass("indigo");
-          $(this).addClass("green");
-          });
+    $(document).ready(function () {
+      const buttonClicked = $(this);
+      $(".workoutView").on("click", function (event) {
+        console.log(this.id);
+        $(this).removeClass("indigo");
+        $(this).addClass("green");
       });
+    });
   </script>
 </body>
+
 </html>
