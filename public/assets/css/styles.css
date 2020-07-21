@@ -35,3 +35,9 @@ main {
   margin-right: 2rem;
   color: white;
 }
+
+/* WORKOUT INPUT FORM  */
+/* label color */
+.input-field label {
+  color: indigo;
+}
