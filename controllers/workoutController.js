@@ -21,7 +21,7 @@ router.get("/workouts/:id", function (req, res) {
     include: [db.Exercise]
   }).then(function (result) {
       var singleexercisedata = {
-        singleexercisedata: result.Exercises
+        singleexercisedata: result.Exercise
       }
     res.render("viewWorkout",singleexercisedata);
   });
