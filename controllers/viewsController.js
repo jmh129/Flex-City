@@ -16,7 +16,9 @@ router.get("/exercise/create",(req,res) =>{
 router.get("/workout/find",(req,res) =>{
   res.render("find");
 })
-
+router.get("/workout/myworkouts",(req,res) =>{
+  res.render("myworkouts");
+})
 //render 404 page needs
 router.get("*",(req,res)=>{
   res.render("404")

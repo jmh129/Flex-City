@@ -5,7 +5,7 @@ const db = require("../models");
 // Route to display the index page
 router.get("/workouts", function (req, res) {
   db.Workout.findAll({}).then(function (result) {
-    res.render("index", result);
+    res.render("find", result);
   });
 });
 

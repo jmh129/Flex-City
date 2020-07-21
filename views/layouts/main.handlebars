@@ -14,19 +14,38 @@
 </head>
 
 <body>
-  {{!-- NAV BAR  --}}
-  <header>
-    <nav class="nav-wrapper deep-purple darken-4">
-      <div class="container">
-        <a href="#" class="brand-logo"><img src="/assets/img/FlexCity.png" width="110" height="auto"></a>
-        <a href="#" class="sidenav-trigger" data-target="mobile-links">
-          <i class="material-icons">menu</i>
-        </a>
-        <ul class="right hide-on-med-and-down">
-          <li class="tab"><a class="waves-effect waves-light" href="/">Home</a></li>
-          <li class="tab"><a class="waves-effect waves-light" href="/workout/find">Find</a></li>
-          <li class="tab"><a class="waves-effect waves-light" href="/workout/create">Create</a></li>
-          <li class="tab"><a class="waves-effect waves-light" href="#">My Workouts</a></li>
+    {{!-- NAV BAR  --}}
+    <header>
+        <nav class="nav-wrapper deep-purple darken-4">
+            <div class="container">
+                <a href="#" class="brand-logo"><img
+                        src="/assets/img/FlexCity.png" width="110"
+                        height="auto"></a>
+                <a href="#" class="sidenav-trigger"
+                    data-target="mobile-links">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li class="tab"><a
+                            class="waves-effect waves-light"
+                            href="/">Home</a></li>
+                    <li class="tab"><a
+                            class="waves-effect waves-light"
+                            href="/workout/find">Find</a></li>
+                    <li class="tab"><a
+                            class="waves-effect waves-light"
+                            href="/workout/create">Create</a></li>
+                    <li class="tab"><a
+                            class="waves-effect waves-light"
+                            href="/workout/myworkouts">My Workouts</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/workout/find">Find</a></li>
+            <li><a href="/workout/create">Create</a></li>
+            <li><a href="/workout/myworkouts">My Workouts</a></li>
         </ul>
       </div>
     </nav>
