@@ -1,3 +1,5 @@
+
+//SAVING WORKOUTS AND VIEWING THOSE WORKOUTS NOT WORKING
 $(document).ready(function () {
   
   let savedWorkout = [];

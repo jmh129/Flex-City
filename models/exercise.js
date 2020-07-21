@@ -2,7 +2,7 @@ module.exports = function (sequelize, DataTypes) {
   //create the table for exercises
   var Exercise = sequelize.define("Exercise", {
     text: {
-      type: DataTypes.text,
+      type: DataTypes.TEXT,
       allowNull: false,
       validate: {
         len: [1],

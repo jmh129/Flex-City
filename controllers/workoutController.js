@@ -17,7 +17,7 @@ router.get("/workouts/:id", function (req, res) {
     },
     include: [db.Excercise],
   }).then(function (result) {
-    res.render("index", result);
+    res.render("viewworkout", result);
   });
 });
 
