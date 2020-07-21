@@ -26,4 +26,8 @@ $(document).ready(function () {
       });
     }
   });
+
+  $("#editbtn").on("click", function () {
+    
+  })
 });
