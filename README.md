@@ -1,5 +1,4 @@
 ![Alt Text](public/assets/img/FlexCity.png )
-#
 
 ## Introduction
 Flex City is an application designed to help users take advantage of their fitness goals! Using sequalize, handlebars, node js and mysql among others, Flex City allows the user to create, edit, delete and follow their exercise programs and to make it as simple as possible. 
