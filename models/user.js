@@ -1,3 +1,4 @@
+//NOT IN USE FOR FINAL SUBMISSION
 module.exports = function (sequelize, DataTypes) {
   //create user table
   const User = sequelize.define("User", {

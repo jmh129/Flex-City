@@ -9,6 +9,7 @@ const exphbs = require("express-handlebars");
  * DEFINE VARIABLES
  */
 const PORT = process.env.PORT || 8080;
+
 const app = express();
 const db = require("./models");
 const ViewsController = require("./controllers/viewsController.js");
@@ -46,8 +47,8 @@ app.use(ViewsController);
  * APP LISTEN
  */
 db.sequelize
-  .sync({ force: true })
-  //   .sync()
+  //.sync({ force: true })
+     .sync()
   .then(() => {
     // Start our server so that it can begin listening to client requests.
     app.listen(PORT, function () {

@@ -2,20 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-    <link
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="../assets/css/styles.css"
-        type="text/css" />
-    <title>Flex City</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../assets/css/styles.css" type="text/css" />
+  <title>Flex City</title>
 
 </head>
 
@@ -37,7 +31,7 @@
                             href="/">Home</a></li>
                     <li class="tab"><a
                             class="waves-effect waves-light"
-                            href="/workout/find">Find</a></li>
+                            href="/workouts/find">Find</a></li>
                     <li class="tab"><a
                             class="waves-effect waves-light"
                             href="/workout/create">Create</a></li>
@@ -80,19 +74,48 @@
     <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    {{!-- NEED TO PUT IN FILE. WAS GETTING ERROR WHEN I PUT IN FILE.  --}}
-    <script>
-        $(document).ready(function () {
-            $('.sidenav').sidenav();
-            $('select').formSelect();
-            $('.parallax').parallax();
-            $('.carousel').carousel();
-            
-        })
-    </script>
+  
 
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  {{!-- NEED TO PUT IN FILE. WAS GETTING ERROR WHEN I PUT IN FILE.  --}}
+  <script>
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+      $('select').formSelect();
+      $('.parallax').parallax();
+    })
+  </script>
+  <script atl = "workoutform script">
+    $(document).ready(function () {
+  $("#submitbtn").on("click", function () {
+    if ($("#name").val() === "" || $("#type").val() === "") {
+      alert("Enter a name and type");
+    } else {
+      $.ajax("/api/workouts", {
+        type: "POST",
+        data: {
+          name: $("#name").val(),
+          type: $("#type").val(),
+        },
+      }).then(function (results) {
+        for (let i = 1; i < 6; i++) {
+          if ($("#message" + i).val() !== "") {
+            $.ajax("/api/exercise/", {
+              type: "POST",
+              data: {
+                text: $("#message" + i).val(),
+                WorkoutId: results.id,
+              },
+            }).then(function () {
+              location.reload();
+            });
+          }
+        }
+      });
+    }
+  });
+});
+  </script>
 </body>
-
 </html>
