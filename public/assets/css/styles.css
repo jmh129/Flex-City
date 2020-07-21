@@ -2,25 +2,28 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  /*background-image: url(../images/background.jpeg);
-  background-size: cover;
-  */
-  background-color: black;
-  opacity: 0.9;
 }
 
-.brand-logo{
-    margin-top: 5px;
-    height: 19vh;
+/* Not Currently Using This */
+/* header {
+  background: url(/assets/images/background.jpeg);
+  background-size: cover;
+  background-position: center;
+  min-height: 1000px;
+}
+
+@media screen and (max-width: 670px) {
+  header {
+    min-height: 600px;
+  }
+} */
+
+.brand-logo {
+  margin-top: 5px;
 }
 
 main {
   flex: 1 0 auto;
-}
-
-ul:not(.browser-default) {
-  display: flex;
-  justify-content: center;
 }
 
 .page-footer {
@@ -30,16 +33,5 @@ ul:not(.browser-default) {
 
 .fa {
   margin-right: 2rem;
-}
-
-nav{
-    height: 21vh;
-    background-color: 31158d;
-    display: flex;
-    min-height: 10px;
-    flex-direction: column;
-    opacity: 0.9;
-h1 {
-  margin-top: 10rem;
-  text-align: center;
+  color: white;
 }

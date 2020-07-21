@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -13,31 +16,74 @@
     <link rel="stylesheet" href="../assets/css/styles.css"
         type="text/css" />
     <title>Flex City</title>
+
 </head>
 
 <body>
     {{!-- NAV BAR  --}}
-    <nav class="navbar deep-purple darken-4">
-        <img src="/assets/img/FlexCity.png" class="brand-logo center">
-        <div class="nav-content center">
-            <ul class="tabs tabs-transparent">
-                <li class="tab"><a
-                        class="waves-effect waves-light active"
-                        href="#test1">Find</a></li>
-                <li class="tab"><a class="waves-effect waves-light"
-                        href="#test2">Create</a></li>
-                <li class="tab"><a class="waves-effect
-                        waves-light" href="#test3">My Workouts</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <header>
+        <nav class="nav-wrapper deep-purple darken-4">
+            <div class="container">
+                <a href="#" class="brand-logo"><img
+                        src="/assets/img/FlexCity.png" width="110"
+                        height="auto"></a>
+                <a href="#" class="sidenav-trigger"
+                    data-target="mobile-links">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li class="tab"><a
+                            class="waves-effect waves-light"
+                            href="#">Home</a></li>
+                    <li class="tab"><a
+                            class="waves-effect waves-light"
+                            href="#">Find</a></li>
+                    <li class="tab"><a
+                            class="waves-effect waves-light"
+                            href="/workout/create">Create</a></li>
+                    <li class="tab"><a
+                            class="waves-effect waves-light"
+                            href="#">My Workouts</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Find</a></li>
+            <li><a href="/workout/create">Create</a></li>
+            <li><a href="#">My Workouts</a></li>
+        </ul>
+    </header>
+
 
     {{{body}}}
 
-    <!-- Compiled and minified JavaScript -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</body>
+    <footer class="page-footer deep-purple darken-4">
+        <div class="container">
+            <div class="footer-copyright">
+                <div class="container">
+                    <a href="../public/404-error.html">
+                        <i class="fa fa-facebook fa-2x"></i></a>
+                    <a href="../public/404-error.html">
+                        <i class="fa fa-instagram fa-2x"></i></a>
+                    <a href="../public/404-error.html">
+                        <i class="fa fa-twitter fa-2x"></i></a>
+                </div>
+            </div>
+    </footer>
 
+
+    {{!-- JQEURY FOR MATERIALIZE  --}}
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    {{!-- NEED TO PUT IN FILE. WAS GETTING ERROR WHEN I PUT IN FILE.  --}}
+    <script>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+            $('select').formSelect();
+        })
+    </script>
+
+</body>
 </html>
