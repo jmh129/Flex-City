@@ -55,12 +55,6 @@ p {
   color: white;
 }
 
-/* WORKOUT INPUT FORM  */
-/* label color */
-.input-field label {
-  color: indigo;
-}
-
 .listSelection{
     display: grid;
     justify-content: center;
