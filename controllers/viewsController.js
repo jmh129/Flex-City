@@ -13,9 +13,7 @@ router.get("/workout/create",(req,res) =>{
 router.get("/exercise/create",(req,res) =>{
   res.render("exerciseform");
 })
-router.get("/workout/find",(req,res) =>{
-  res.render("find");
-})
+
 router.get("/workout/myworkouts",(req,res) =>{
   res.render("myworkouts");
 })

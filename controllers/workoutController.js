@@ -3,9 +3,12 @@ const router = express.Router();
 const db = require("../models");
 
 // Route to display the index page
-router.get("/workouts", function (req, res) {
+router.get("/workouts/find", function (req, res) {
   db.Workout.findAll({}).then(function (result) {
-    res.render("find", result);
+    const workout = {
+      workout:result
+    }
+    res.render("find", workout);
   });
 });
 
