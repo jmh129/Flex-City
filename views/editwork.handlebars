@@ -1,0 +1,33 @@
+<section class="section container" id="create">
+    <div class="row">
+        <div class="col s12 l5">
+            <h2 class="indigo-text text-darken-4">Edit the Workout!</h2>
+        </div>
+        <div class="col s12 l5 offset-l2">
+            <form action="">
+                <div class="input-field">
+                    <textarea id="type" class="materialize-textarea">{{singleexercisedata.name}}</textarea>
+                    <label for="email">Name of Workout</label>
+                </div>
+                <div class="input-field">
+                    <textarea id="type" class="materialize-textarea">{{singleexercisedata.type}}</textarea>
+                    <label for="type">Type of Workout</label>
+                </div>
+
+                {{#each singleexercisedata.Exercises}}
+                <div class="input-field">
+                    <textarea id="message{{dataValues.id}}" class="materialize-textarea">{{dataValues.text}}</textarea>
+                    <label for="message1">Exercise</label>
+                </div>
+                {{/each}}
+
+                <div class="input-field">
+                    <textarea id="comments" class="materialize-textarea"></textarea>
+                    <label for="comments">Comments</label>
+                </div>
+                <a class="waves-effect waves-light btn indigo" id="submitbtn">Submit</a>
+            </form>
+        </div>
+    </div>
+    </div>
+</section>
