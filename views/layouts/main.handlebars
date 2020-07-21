@@ -34,7 +34,7 @@
                 <ul class="right hide-on-med-and-down">
                     <li class="tab"><a
                             class="waves-effect waves-light"
-                            href="#">Home</a></li>
+                            href="/">Home</a></li>
                     <li class="tab"><a
                             class="waves-effect waves-light"
                             href="#">Find</a></li>
@@ -55,7 +55,6 @@
         </ul>
     </header>
 
-
     {{{body}}}
 
     <footer class="page-footer deep-purple darken-4">
@@ -74,16 +73,20 @@
 
 
     {{!-- JQEURY FOR MATERIALIZE  --}}
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     {{!-- NEED TO PUT IN FILE. WAS GETTING ERROR WHEN I PUT IN FILE.  --}}
     <script>
         $(document).ready(function () {
             $('.sidenav').sidenav();
             $('select').formSelect();
+            $('.parallax').parallax();
         })
     </script>
 
 </body>
+
 </html>
