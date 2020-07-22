@@ -17,9 +17,10 @@ Clone this repo to your local machine using https://github.com/jmh129/project-2
 Note: Make sure to run npm install as this application makes use of node packages. 
 
 ### Usage
-To use the application, the user can visit the site and select from the options available on the homepage.
+To use the application, the user can visit the site and select from the options available on the homepage.The user can also provide feedback to the Flex City team by navigating to this link. Note, the team still needs to update the UI so the user can navigate to this page from the site. 
 
-Link to site: https://damp-refuge-14188.herokuapp.com/
+Link to site: https://blooming-coast-09812.herokuapp.com/
+Link to mail site: https://blooming-coast-09812.herokuapp.com/mail
 
 
 
