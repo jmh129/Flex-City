@@ -1,6 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
+
+router.get("/mail",(req,res) => {
+    res.render("mail")
+
+})
 //renders the front page
 router.get("/", (req, res) => {
   res.render("index");
