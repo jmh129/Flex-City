@@ -197,6 +197,22 @@
       })
     })
   </script>
+<script>
+   $(document).ready(function () {
+     $("#send-btn").on("click",function(event){
+       $.ajax("/api/mail",{
+         type:"POST",
+         data:{
+           subject:$("#mail-subject").val(),
+           text:$("#mail-text").val()
+         }
+       }).then(()=>{
+         console.log("Sent mail sucessfully")
+       })
+     })
+   })
+</script>
+
 </body>
 
 </html>
