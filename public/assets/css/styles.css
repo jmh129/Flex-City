@@ -4,20 +4,6 @@ body {
   flex-direction: column;
 }
 
-/* Not Currently Using This */
-/* header {
-  background: url(/assets/images/background.jpeg);
-  background-size: cover;
-  background-position: center;
-  min-height: 1000px;
-}
-
-@media screen and (max-width: 670px) {
-  header {
-    min-height: 600px;
-  }
-} */
-
 .brand-logo {
   margin-top: 5px;
 }
@@ -43,6 +29,10 @@ p {
   font-size: 30px;
   font-weight: bold;
   border-bottom: 1px solid gray;
+}
+
+.btn-floating {
+  margin-right: 5px;
 }
 
 .page-footer {
