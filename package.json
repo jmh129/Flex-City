@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "compression": "^1.7.4",
     "express": "^4.17.1",
     "express-handlebars": "^3.0.0",
     "materialize-social": "^1.0.3",

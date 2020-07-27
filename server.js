@@ -2,6 +2,7 @@
  * REQUIRE NPM PACKAGES
  * REQUIRE EXTERNAL FILES
  */
+var compression = require("compression");
 const express = require("express");
 const exphbs = require("express-handlebars");
 
@@ -19,10 +20,13 @@ const ExerciseController = require("./controllers/exerciseController");
 const WorkoutController = require("./controllers/workoutController");
 const MailController = require("./controllers/mailController");
 
-
 /**
  * MIDDLEWARE
  */
+
+// compress all responses
+app.use(compression());
+
 // Parse application body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -43,7 +47,7 @@ app.use("/api/users", UsersController);
 app.use(ExerciseController);
 app.use(WorkoutController);
 app.use(ViewsController);
-app.use(MailController)
+app.use(MailController);
 
 /**
  * DB Connection
@@ -51,7 +55,7 @@ app.use(MailController)
  */
 db.sequelize
   //.sync({ force: true })
-     .sync()
+  .sync()
   .then(() => {
     // Start our server so that it can begin listening to client requests.
     app.listen(PORT, function () {
