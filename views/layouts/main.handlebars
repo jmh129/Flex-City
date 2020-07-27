@@ -26,7 +26,7 @@
     <nav class="nav-wrapper deep-purple darken-4">
       <div class="container">
         <a href="#" class="brand-logo"><img
-            src="/assets/img/FlexCity.png" width="110"
+            src="/assets/images/FlexCity.png" width="110"
             height="auto"></a>
         <a href="#" class="sidenav-trigger"
           data-target="mobile-links">
@@ -69,9 +69,6 @@
             <i class="fa fa-twitter fa-2x"></i></a>
         </div>
       </div>
-      <button class="btn indigo center workoutView nasaButton" id="{{id}}">
-          Bail and Go to Outer Space Instead
-      </button>
   </footer>
 
 
@@ -138,10 +135,10 @@
 
         $.ajax("/api/exercise/" + id, {
           type: "DELETE"
-          }).then(function(result) {
-            console.log(result)
-            location.reload();
-          })
+        }).then(function (result) {
+          console.log(result)
+          location.reload();
+        })
       });
     });
   </script>
@@ -188,48 +185,33 @@
   </script>
   <script>
     $(document).ready(function () {
-      $(".deletebtn").on("click", function(event){
+      $(".deletebtn").on("click", function (event) {
         let id = $(this).attr("data-id")
 
         $.ajax("/api/workouts/" + id, {
-          type:"DELETE"
-        }).then(function(result) {
-            console.log(result)
-            location.reload();
-          });
-      });
-      $(".nasaButton").on("click", function (event) {
-          var day = Math.ceil(Math.random()*29);
-          var month = Math.ceil(Math.random()*11);
-          var yearNumber = Math.ceil(Math.random()*9);
-          var year = "201"+yearNumber;
-          var kanye = true;
-          $.ajax({
-          url: "https://api.nasa.gov/planetary/apod?api_key=ibf0gWXnCFVXHCKvc6tQ5Bl73ShTQZQFcj62Evrc&date="+year+"-"+month+"-"+day,
-          method: "GET",
-          }).then(function(response){
-              $("body").html("");
-              $("body").css("background-size","cover");
-              $("body").css("background-image","url("+response.hdurl+")");
-          });
+          type: "DELETE"
+        }).then(function (result) {
+          console.log(result)
+          location.reload();
+        });
       });
     });
   </script>
-<script>
-   $(document).ready(function () {
-     $("#send-btn").on("click",function(event){
-       $.ajax("/api/mail",{
-         type:"POST",
-         data:{
-           subject:$("#mail-subject").val(),
-           text:$("#mail-text").val()
-         }
-       }).then(()=>{
-         console.log("Sent mail sucessfully")
-       })
-     })
-   })
-</script>
+  <script>
+    $(document).ready(function () {
+      $("#send-btn").on("click", function (event) {
+        $.ajax("/api/mail", {
+          type: "POST",
+          data: {
+            subject: $("#mail-subject").val(),
+            text: $("#mail-text").val()
+          }
+        }).then(() => {
+          console.log("Sent mail sucessfully")
+        })
+      })
+    })
+  </script>
 
 </body>
 
