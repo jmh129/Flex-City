@@ -23,27 +23,31 @@
 <body>
   {{!-- NAV BAR  --}}
   <header>
-    <nav class="nav-wrapper deep-purple darken-4">
-      <div class="container">
-        <a href="#" class="brand-logo"><img
-            src="/assets/images/FlexCity.png" width="110"
-            height="auto"></a>
-        <a href="#" class="sidenav-trigger"
-          data-target="mobile-links">
-          <i class="material-icons">menu</i>
-        </a>
-        <ul class="right hide-on-med-and-down">
-          <li class="tab"><a class="waves-effect waves-light"
-              href="/">Home</a></li>
-          <li class="tab"><a class="waves-effect waves-light"
-              href="/workouts/find">Find</a></li>
-          <li class="tab"><a class="waves-effect waves-light"
-              href="/workout/create">Create</a></li>
+    <div class="navbar-fixed">
+      <nav class="nav-wrapper transparent z-depth-0">
+        <div class="container">
+          <a href="#" class="brand-logo responsive"><i><span
+                style="font-weight: 900">Flex</span>City</i>
+            <img src="/assets/images/FlexCityPageIcon.png"
+              alt="FlexCity Icon" width="60" height="auto">
+          </a>
+          <a href="#" class="sidenav-trigger"
+            data-target="mobile-links">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li class="tab"><a class="waves-effect waves-light"
+                href="/">Home</a></li>
+            <li class="tab"><a class="waves-effect waves-light"
+                href="/workouts/find">Find</a></li>
+            <li class="tab"><a class="waves-effect waves-light"
+                href="/workout/create">Create</a></li>
 
-          </li>
-        </ul>
-      </div>
-    </nav>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
     <ul class="sidenav" id="mobile-links">
       <li><a href="/">Home</a></li>
       <li><a href="/workouts/find">Find</a></li>
@@ -57,7 +61,7 @@
 
 
   </main>
-  <footer class="page-footer deep-purple darken-4">
+  <footer class="page-footer indigo">
     <div class="container">
       <div class="footer-copyright">
         <div class="container">

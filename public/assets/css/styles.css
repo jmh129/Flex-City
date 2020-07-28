@@ -1,15 +1,38 @@
 body {
+  background-color: indigo;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
+/* NAVBAR */
 .brand-logo {
   margin-top: 5px;
 }
 
+.sidenav {
+  background-color: transparent;
+}
+
+.sidenav li > a {
+  color: white;
+}
+
+/* MAIN CONTENT */
 main {
   flex: 1 0 auto;
+}
+
+.parallax-container {
+  background: rgba(75, 0, 130, 0.7);
+}
+
+.transbox {
+  position: absolute;
+  margin-left: 45px;
+  margin-bottom: 65px;
+  bottom: 0;
+  color: aliceblue;
 }
 
 .section {
@@ -31,10 +54,24 @@ p {
   border-bottom: 1px solid gray;
 }
 
+.btn {
+  background-color: transparent;
+  border: 5px solid white;
+  text-align: center;
+  height: 45px;
+}
+
+.btn:hover {
+  background-color: white;
+  color: indigo;
+  border: 5px solid white;
+}
+
 .btn-floating {
   margin-right: 5px;
 }
 
+/* FOOTER */
 .page-footer {
   text-align: center;
   padding-top: 0px;
@@ -45,7 +82,7 @@ p {
   color: white;
 }
 
-.listSelection{
-    display: grid;
-    justify-content: center;
+.listSelection {
+  display: grid;
+  justify-content: center;
 }
