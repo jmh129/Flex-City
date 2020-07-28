@@ -19,6 +19,18 @@ body {
 }
 
 /* MAIN CONTENT */
+
+#homescreen {
+  height: 850px;
+}
+
+#home-transbox {
+  position: relative;
+  text-align: center;
+  margin: 0;
+  margin-top: 15%;
+}
+
 main {
   flex: 1 0 auto;
 }
