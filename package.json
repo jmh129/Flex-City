@@ -10,7 +10,7 @@
     "materialize-social": "^1.0.3",
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
-    "nodemailer": "^6.4.10",
+    "nodemailer": "^6.4.16",
     "sequelize": "^6.3.3"
   },
   "devDependencies": {
